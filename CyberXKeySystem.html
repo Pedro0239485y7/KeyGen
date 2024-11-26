@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Retrieval</title>
+</head>
+<body>
+    <h1>Your Key:</h1>
+    <p id="key">Loading...</p>
+
+    <script>
+        // Simulating dynamic key fetching (replace with actual server logic)
+        fetch('http://your-backend-url/get_key')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('key').innerText = data.key;
+            })
+            .catch(error => {
+                console.error('Error fetching key:', error);
+                document.getElementById('key').innerText = 'Error fetching key.';
+            });
+    </script>
+</body>
+</html>
